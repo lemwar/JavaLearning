@@ -32,7 +32,7 @@ public class FilledList<T> {
 
     public static void main(String[] args) {
         FilledList<CountedInteger> f1 = new FilledList<>(CountedInteger.class);
-        f1.create(15);
+        System.out.println(f1.create(15));
     }
 
 }
