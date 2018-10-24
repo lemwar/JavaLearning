@@ -1,6 +1,7 @@
 package com.rc.javalearning.typeinfo;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 class CountedInteger {
@@ -31,8 +32,10 @@ public class FilledList<T> {
     }
 
     public static void main(String[] args) {
-        FilledList<CountedInteger> f1 = new FilledList<>(CountedInteger.class);
-        System.out.println(f1.create(15));
+//        FilledList<String> f1 = new FilledList<String>(CountedInteger.class);
+//        System.out.println(f1.create(15));
+//        List list = new LinkedList();
+
     }
 
 }
