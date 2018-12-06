@@ -19,8 +19,8 @@ public class JavaFXEventDemo extends Application {
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("JavaFX Event Demo");
-        FlowPane pane = new FlowPane(10, 10);
-        pane.setAlignment(Pos.CENTER);
+        FlowPane pane = new FlowPane(20, 20); // зазоры между контролами (кнопками и лэйблом)
+        pane.setAlignment(Pos.CENTER); // центрируем все элементы на панели
         Scene scene = new Scene(pane, 300, 300);
         primaryStage.setScene(scene);
 
@@ -28,6 +28,7 @@ public class JavaFXEventDemo extends Application {
         Button buttonDown = new Button("Down");
         response = new Label("Push a button");
 
+        // передается анонимный класс, реализующий метод handle() функционального интерфейса EventHandler
         buttonUp.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -35,12 +36,8 @@ public class JavaFXEventDemo extends Application {
             }
         });
 
-        buttonDown.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                response.setText("You pressed Down.");
-            }
-        });
+        // а можно было реализовать метод handle() при помощи лямбды
+        buttonDown.setOnAction((event) -> response.setText("You pressed Down."));
 
         pane.getChildren().addAll(response, buttonDown, buttonUp);
         primaryStage.show();
