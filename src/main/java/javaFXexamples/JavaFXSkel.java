@@ -13,12 +13,12 @@ public class JavaFXSkel extends Application {
 
     // Переопределить метод init(), вуполняется до метода start()
     public void init(){
-        System.out.println("B теле метода init{)");
+        System.out.println("B теле метода init()");
     }
 
     // Переопределить иначе ошибка
     public void start(Stage myStage){
-        System.out.println("B теле метода start{)");
+        System.out.println("B теле метода start()");
         myStage.setTitle("Kapкac приложения JavaFX"); // Установить заголовок окна приложения
         // Создать корневой узел. В данном случае используется плавающая компоновка, но возможны и другие варианты.
         FlowPane rootNode = new FlowPane();
